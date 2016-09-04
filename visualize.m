@@ -23,11 +23,11 @@ while ischar(tline)
   % Proposals
   if ~ isempty(bbox_dir)
     load([bbox_dir '/' tline '.mat']);
-    for i = 1:size(bboxes, 1)
-      x = bboxes(i, 1);
-      y = bboxes(i, 2);
-      w = bboxes(i, 3) - bboxes(i, 1) + 1;
-      h = bboxes(i, 4) - bboxes(i, 2) + 1;
+    for i = 1:size(boxes, 1)
+      x = boxes(i, 1);
+      y = boxes(i, 2);
+      w = boxes(i, 3) - boxes(i, 1) + 1;
+      h = boxes(i, 4) - boxes(i, 2) + 1;
       rectangle('Position', [x y w h], 'EdgeColor', 'b');
     end
   end
