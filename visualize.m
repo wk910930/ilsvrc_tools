@@ -7,6 +7,8 @@ img_dir = '';
 anns_dir = '';
 bbox_dir = '';
 
+bbox_topK = 30;
+
 fid = fopen(det_list);
 
 tline = fgetl(fid);
@@ -23,6 +25,7 @@ while ischar(tline)
   % Proposals
   if ~ isempty(bbox_dir)
     load([bbox_dir '/' tline '.mat']);
+    boxes = boxes(1:bbox_topK, :);
     for i = 1:size(boxes, 1)
       x = boxes(i, 1);
       y = boxes(i, 2);
