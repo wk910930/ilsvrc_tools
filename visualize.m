@@ -19,7 +19,8 @@ while ischar(tline)
   figure(1)
   img = imread([img_dir '/' tline '.JPEG']);
   imshow(img)
-  title(sprintf('%s', tline));
+  th = title(sprintf('%s', tline));
+  set(th, 'Interpreter', 'none')
   hold on
 
   % Proposals
